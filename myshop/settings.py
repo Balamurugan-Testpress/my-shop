@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "shop.apps.ShopConfig",
     "cart.apps.CartConfig",
     "orders.apps.OrdersConfig",
+    "payment.apps.PaymentConfig",
 ]
 
 MIDDLEWARE = [
@@ -120,7 +121,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "static/"
+# settings.py
+
+STATIC_URL = "/static/"  # URL prefix for browser
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # (optional) custom static dirs
+]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"  # where collectstatic puts final files
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -128,3 +137,16 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CART_SESSION_ID = "cart"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+BRAINTREE_MERCHANT_ID = "gv24vgmkftcrs5h5"  # Merchant ID
+BRAINTREE_PUBLIC_KEY = "qbw5wbxcgvxhf7mm"  # Public Key
+BRAINTREE_PRIVATE_KEY = "db7f94e302cf9d27a0c20dd9ea05d9ba"  # Private key
+
+import braintree
+
+BRAINTREE_CONF = braintree.Configuration(
+    braintree.Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY,
+)
