@@ -1,4 +1,5 @@
 import os
+import braintree
 from pathlib import Path
 
 """
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     "cart.apps.CartConfig",
     "orders.apps.OrdersConfig",
     "payment.apps.PaymentConfig",
+    "coupons.apps.CouponsConfig",
 ]
 
 MIDDLEWARE = [
@@ -142,7 +144,6 @@ BRAINTREE_MERCHANT_ID = "gv24vgmkftcrs5h5"  # Merchant ID
 BRAINTREE_PUBLIC_KEY = "qbw5wbxcgvxhf7mm"  # Public Key
 BRAINTREE_PRIVATE_KEY = "db7f94e302cf9d27a0c20dd9ea05d9ba"  # Private key
 
-import braintree
 
 BRAINTREE_CONF = braintree.Configuration(
     braintree.Environment.Sandbox,
