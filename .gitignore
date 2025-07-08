@@ -1,29 +1,62 @@
-# .gitignore
-
+# ========================================
 # Python
+# ========================================
 __pycache__/
 *.py[cod]
-*.egg
-*.egg-info/
-dist/
-build/
+*.pyo
+*.pyd
+*.so
 
-# Env
+# ========================================
+# Virtual Environment
+# ========================================
 .env
 *.env
+env/
+ENV/
+venv/
+.venv/
 
-# Django specific
+# ========================================
+# Django
+# ========================================
 *.sqlite3
 db.sqlite3
+local_settings.py
+
+# Media and Static (generated or uploaded content)
+staticfiles/
+static_root/
 media/
 static/
-staticfiles/
+# Optional: comment out if you want to track
+# Automatically generated Django migrations
+**/migrations/__pycache__/
+**/migrations/*.py[cod]
+**/migrations/*.log
 
-# VSCode and system files
+# ========================================
+# Test and Coverage
+# ========================================
+htmlcov/
+.coverage
+coverage.xml
+.cache/
+.pytest_cache/
+
+# ========================================
+# VSCode
+# ========================================
 .vscode/
+
+# ========================================
+# macOS
+# ========================================
 .DS_Store
 
-# Logs
-*.log
+# ========================================
+# JetBrains IDEs (optional, like PyCharm)
+# ========================================
+.idea/
+*.iml
 
-env/
