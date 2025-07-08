@@ -1,50 +1,29 @@
-# === Python ===
+# .gitignore
+
+# Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-*.so
+*.egg
+*.egg-info/
+dist/
+build/
 
-# === Environment ===
+# Env
 .env
-env/
-venv/
-ENV/
-.venv/
 *.env
 
-# === Django ===
+# Django specific
 *.sqlite3
 db.sqlite3
 media/
+static/
 staticfiles/
-static_root/
-local_settings.py
 
-# === VSCode ===
+# VSCode and system files
 .vscode/
-
-# === macOS ===
 .DS_Store
 
-# === Migrations (optional — only if auto-generated and can be rebuilt) ===
-# Comment out if you want migrations tracked
-# */migrations/__pycache__/
-# */migrations/*.pyc
-# */migrations/*.pyo
-# */migrations/*.py~ 
-# */migrations/*.log
-
-# === Tests and Coverage ===
-htmlcov/
-.coverage
-coverage.xml
-.cache/
-.pytest_cache/
-
-# === Logs ===
+# Logs
 *.log
 
-# === JetBrains (PyCharm) ===
-.idea/
-ignore.txt
+env/
